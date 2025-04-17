@@ -1,0 +1,38 @@
+<%- layout('layout') -%>
+
+<h2>Available Cars</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Mileage</th>
+      <th>Fuel</th>
+      <th>Transmission</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (cars && cars.length > 0) { %>
+      <% cars.forEach(car => { %>
+        <tr>
+          <td><%= car.make %></td>
+          <td><%= car.model %></td>
+          <td><%= car.year %></td>
+          <td>$<%= car.price %></td>
+          <td><%= car.mileage %> km</td>
+          <td><%= car.fuelType %></td>
+          <td><%= car.transmission %></td>
+          <td><%= car.status %></td>
+        </tr>
+      <% }) %>
+    <% } else { %>
+      <tr>
+        <td colspan="8">No cars found</td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>

@@ -1,0 +1,24 @@
+<%- layout('layout') -%>
+
+<h2>Register</h2>
+
+<form action="/auth/register" method="POST">
+  <label>Username</label>
+  <input type="text" name="username" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Password</label>
+  <input type="password" name="password" required>
+
+  <label>Role</label>
+  <select name="role">
+    <option value="User">User</option>
+    <option value="Admin">Admin</option>
+  </select>
+
+  <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a href="/login">Login here</a></p>

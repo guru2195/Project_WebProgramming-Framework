@@ -1,0 +1,10 @@
+<%- layout('layout') -%>
+
+<h2>Welcome to the Dashboard</h2>
+
+<% if (user) { %>
+  <p>Hello, <strong><%= user.username %></strong>!</p>
+  <p>Your role: <strong><%= user.role %></strong></p>
+<% } else { %>
+  <p>You are not logged in.</p>
+<% } %>
